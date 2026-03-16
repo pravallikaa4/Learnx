@@ -67,7 +67,7 @@ export default function Register() {
     if (hasErrors) return setServerError("Please fix the errors before submitting.");
 
     try {
-      const res = await apiRequest("/auth/register", "POST", form);
+      const res = await apiRequest("/api/auth/register", "POST", form);
       login(res.user, res.token);
       navigate("/dashboard");
     } catch (err) {
