@@ -9,7 +9,7 @@ export default function Leaderboard() {
   }, []);
 
   const loadLeaderboard = async () => {
-    const data = await apiRequest("/users/leaderboard");
+    const data = await apiRequest("/api/users/leaderboard");
     setMentors(data || []);
   };
 
