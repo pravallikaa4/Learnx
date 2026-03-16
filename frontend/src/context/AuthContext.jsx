@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
 
   const loadUser = async () => {
     try {
-      const user = await apiRequest("/auth/me", "GET");
+      const user = await apiRequest("/api/auth/me", "GET");
       setCurrentUser(user);
     } catch (err) {
       console.log("User load failed");
@@ -35,13 +35,13 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const res = await apiRequest("/auth/login", "POST", { email, password });
+    const res = await apiRequest("/api/auth/login", "POST", { email, password });
     localStorage.setItem("token", res.token);
     await loadUser();
   };
 
   const register = async (data) => {
-    const res = await apiRequest("/auth/register", "POST", data);
+    const res = await apiRequest("/api/auth/register", "POST", data);
     localStorage.setItem("token", res.token);
     await loadUser();
   };
