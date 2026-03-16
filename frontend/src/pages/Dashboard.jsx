@@ -40,7 +40,7 @@ export default function Dashboard() {
 
     try {
 
-      const data = await apiRequest("/auth/me");
+      const data = await apiRequest("/api/auth/me");
       setUserData(data);
 
     } catch (err) {
@@ -55,7 +55,7 @@ export default function Dashboard() {
 
     try {
 
-      const data = await apiRequest("/sessions/analytics");
+      const data = await apiRequest("/api/sessions/analytics");
       setAnalytics(data || []);
 
     } catch (err) {
