@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "react-calendar/dist/Calendar.css";
+
+body {
+  @apply bg-bg text-dark;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition;
+}
+
+.nav-pill {
+  @apply px-5 py-2 rounded-full bg-lightBlue text-primary hover:bg-primary hover:text-white transition;
+}
+ .str-video__menu {
+  background-color: #e0e2e6 !important;
+  color: white !important;
+}
+
+.str-video__menu button {
+  color: white !important;
+}
