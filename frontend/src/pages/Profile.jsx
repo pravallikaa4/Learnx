@@ -134,7 +134,7 @@ export default function Profile() {
   // ================= SAVE =================
   const handleSave = async () => {
   try {
-    const data = await apiRequest("/users/profile", "PUT", form);
+   const data = await apiRequest("/api/users/profile", "PUT", form);
 
     if (data?.user) {
       updateUser(data.user);
