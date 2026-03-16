@@ -30,7 +30,7 @@ export default function Chat() {
   const loadSessions = async () => {
     try {
       setLoading(true);
-      const data = await apiRequest(`/sessions?userId=${currentUser._id}`);
+      const data = await apiRequest(`/api/sessions?userId=${currentUser._id}`);
       setSessions(data || []);
       if (data?.length > 0) setActiveSession(data[0]);
     } catch (err) {
@@ -72,7 +72,7 @@ export default function Chat() {
       rating: Number(rating) || 0,
     };
 
-    await apiRequest("/sessions/complete", "PUT", feedbackData);
+    await apiRequest("/api/sessions/complete", "PUT", feedbackData);
 
     // Reset UI
     setFeedbackOpen(false);
