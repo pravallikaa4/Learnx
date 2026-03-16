@@ -12,7 +12,7 @@ export default function UserProfile() {
 
   const fetchUser = async () => {
     try {
-      const data = await apiRequest(`/users/${id}`);
+      const data = await apiRequest(`/api/users/${id}`);
       setUser(data);
     } catch (err) {
       console.error(err);
