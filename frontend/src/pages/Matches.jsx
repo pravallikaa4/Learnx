@@ -18,7 +18,7 @@ export default function Matches() {
 
   const fetchMatches = async () => {
     try {
-      const data = await apiRequest("/matches", "POST");
+      const data = await apiRequest("/api/matches", "POST");
       setMatches(data);
       setLoading(false);
     } catch (err) {
@@ -29,7 +29,7 @@ export default function Matches() {
 
   const startSession = async (match) => {
     try {
-      await apiRequest("/sessions", "POST", {
+      await apiRequest("/api/sessions", "POST", {
         matchedUserId: match.user._id,
         skill: match.matchedSkills?.[0] || "General",
         scheduledDate: match.bestTime?.date || null,
