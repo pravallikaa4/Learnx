@@ -36,7 +36,7 @@ export default function ProfileSetup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await apiRequest("/auth/profile", "PUT", {
+    await apiRequest("/api/auth/profile", "PUT", {
       bio,
       skillsKnown: skillsKnown.split(",").map((s) => s.trim()),
       skillsToLearn: skillsToLearn.split(",").map((s) => s.trim()),
