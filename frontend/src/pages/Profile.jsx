@@ -133,16 +133,24 @@ export default function Profile() {
 
   // ================= SAVE =================
   const handleSave = async () => {
-    try {
-      const data = await apiRequest("/users/profile", "PUT", form);
-      if (data?.user) {
-        updateUser(data.user);
-        alert("Profile saved successfully!");
-      }
-    } catch {
-      alert("Upload failed. Try smaller image.");
+  try {
+    const data = await apiRequest("/users/profile", "PUT", form);
+
+    if (data?.user) {
+      updateUser(data.user);
+      alert("Profile saved successfully!");
     }
-  };
+
+  } catch (err) {
+    console.error(err);
+
+    if (form.image && form.image.length > 2000000) {
+      alert("Image is too large. Please upload a smaller picture.");
+    } else {
+      alert("Failed to save profile. Please try again.");
+    }
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-blue-100 py-14 px-6">
