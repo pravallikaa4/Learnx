@@ -48,7 +48,7 @@ export default function Scheduler() {
       ];
 
       const updatedUser = await apiRequest(
-        "/users/availability",
+        "/api/users/availability",
         "PUT",
         { availability: updatedAvailability }
       );
@@ -66,7 +66,7 @@ export default function Scheduler() {
     );
 
     const updatedUser = await apiRequest(
-      "/users/availability",
+      "/api/users/availability",
       "PUT",
       { availability: updatedAvailability }
     );
@@ -88,7 +88,7 @@ export default function Scheduler() {
       .filter((day) => day.timeSlots.length > 0);
 
     const updatedUser = await apiRequest(
-      "/users/availability",
+      "/api/users/availability",
       "PUT",
       { availability: updatedAvailability }
     );
